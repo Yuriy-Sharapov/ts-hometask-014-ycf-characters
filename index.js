@@ -1,36 +1,28 @@
-import express from 'express'
-// import serverless from 'serverless-http'
+const express = require('express')
+import serverless from 'serverless-http'
+const charactersDb = require('./characters_db.json');
 
 const app = express()
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 app.get('/api/characters', (req, res) => {
-    res.json('/api/characters')
+    res.json(charactersDb)
 })
 
-app.get('/api/characters/:cid', (req, res) => {
-    const { cid } = req.params
+app.get('/api/characters/:id', (req, res) => {
+    const { id } = req.params
 
-    const character = {
-        id         : cid,
-        name       : "Имя персонажа",
-        description: "описание...",
-        modified   : "2020-07-21",
-        thumbnail  : "http://...",
-        comics: [
-            {
-                id: 1,
-                name: "Spider-Man: 101 Ways to End the Clone Saga (1997) #1"
-            }
-        ]
-    }
-
-    res.json(character)
+    const character = charactersDb.find((char) => char.id == id )
+    if (character)
+        res.json(character) 
+    else
+        res.json('Code: 404')
 })
 
-app.listen(3000, () =>{
-    console.log(`Server is listening a PORT 3000`)
-})
-
-//module.exports.handler = serverless(app)
+// const PORT = process.env.PORT || 3000
+// app.listen(PORT, () =>{
+//     console.log(`Server is listening a PORT ${PORT}`)  
+// })     
+   
+module.exports.handler = serverless(app)  
