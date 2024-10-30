@@ -29,6 +29,10 @@
 }
 ```
 
+:white_check_mark: РЕШЕНИЕ: 
+https://d5dj5329pr4ld7o95cbj.apigw.yandexcloud.net/api/characters
+https://d5dj5329pr4ld7o95cbj.apigw.yandexcloud.net/api/characters?id=3
+
 **Задание 3 (необязательное).**
 
 - Изучите инструкции, как начать работать с инструментами [Managed Service for MongoDB](https://yandex.cloud/ru/docs/managed-mongodb/quickstart) и [Managed Service for PostgreSQL](https://yandex.cloud/ru/docs/managed-postgresql/quickstart?utm_source=console).
