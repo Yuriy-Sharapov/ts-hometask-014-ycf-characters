@@ -29,8 +29,10 @@
 }
 ```
 
-:white_check_mark: РЕШЕНИЕ: 
+:white_check_mark: РЕШЕНИЕ:
+Получить всех персонажей 
 https://d5dj5329pr4ld7o95cbj.apigw.yandexcloud.net/api/characters
+Получить персонажа по **ID**
 https://d5dj5329pr4ld7o95cbj.apigw.yandexcloud.net/api/characters?id=3
 
 **Задание 3 (необязательное).**
